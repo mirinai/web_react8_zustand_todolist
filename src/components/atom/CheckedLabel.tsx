@@ -1,11 +1,15 @@
+import { ERROR } from "../../constants/errorMessage";
 import { TEXTSTYLE } from "../../styles/textStyle";
 
-export type LabelProps = {
+export type CheckedLabelProps = {
   contents?: string;
   isChecked?: boolean;
 };
 
-const Label = ({ contents = "내용 없음", isChecked = false }: LabelProps) => {
+const CheckedLabel = ({
+  contents = ERROR.NOCONTENT,
+  isChecked = false,
+}: CheckedLabelProps) => {
   //   const textDone = "line-through text-gray-400";
   //   const textTodo = "font-bold text-gray-900";
   return (
@@ -14,4 +18,4 @@ const Label = ({ contents = "내용 없음", isChecked = false }: LabelProps) =>
     </span>
   );
 };
-export default Label;
+export default CheckedLabel;
